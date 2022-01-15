@@ -123,8 +123,8 @@ input, select, textarea {
 	max-height: 10%; */
 	min-width: inherit;
 	min-height: inherit;
-	max-height: 80vmin;
-	max-width: 100vmin;
+	max-height: 80%;
+	max-width: 100%;
 	object-fit: cover;
     margin: 15px;
 }
@@ -136,7 +136,6 @@ input, select, textarea {
 	/* overflow: hidden; */
 	text-align: center;
 	vertical-align:middle;
-	
 }
 
 .image-pid img {
@@ -144,8 +143,8 @@ input, select, textarea {
 	max-height: 10%; */
 	min-width: inherit;
 	min-height: inherit;
-	max-height: 100vmin;
-	max-width: 150vmin;
+	max-height: 80%;
+	max-width: 100%;
 	object-fit: cover;
     margin: 15px;
 }
@@ -4091,3 +4090,26 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	.table-wrapper {
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+	}
+}
