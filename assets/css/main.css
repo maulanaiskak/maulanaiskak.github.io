@@ -150,6 +150,12 @@ input, select, textarea {
     margin: 15px;
 }
 
+.btn {
+	background-color: whitesmoke;
+	cursor: pointer;
+	font-size: 15px;
+  }
+
 /* Basic */
 
 	@-ms-viewport {
