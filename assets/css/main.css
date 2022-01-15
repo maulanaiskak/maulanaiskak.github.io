@@ -87,6 +87,69 @@ input, select, textarea {
     margin: 15px;
 }
 
+.image {
+	flex: 1 0 10%;
+    color: white;
+	border-radius: 50%;
+	/* overflow: hidden; */
+	text-align: center;
+	vertical-align:middle;
+	
+}
+
+.image img {
+    /* width: 50%;
+	max-height: 10%; */
+	min-width: inherit;
+	min-height: inherit;
+	max-height: 50vmin;
+	max-width: 70vmin;
+	object-fit: cover;
+    margin: 15px;
+}
+
+.image-p {
+	flex: 1 0 10%;
+    color: white;
+	border-radius: 50%;
+	/* overflow: hidden; */
+	text-align: center;
+	vertical-align:middle;
+	
+}
+
+.image-p img {
+    /* width: 50%;
+	max-height: 10%; */
+	min-width: inherit;
+	min-height: inherit;
+	max-height: 80vmin;
+	max-width: 100vmin;
+	object-fit: cover;
+    margin: 15px;
+}
+
+.image-pid {
+	flex: 1 0 10%;
+    color: white;
+	border-radius: 50%;
+	/* overflow: hidden; */
+	text-align: center;
+	vertical-align:middle;
+	
+}
+
+.image-pid img {
+    /* width: 50%;
+	max-height: 10%; */
+	min-width: inherit;
+	min-height: inherit;
+	max-height: 100vmin;
+	max-width: 150vmin;
+	object-fit: cover;
+    margin: 15px;
+}
+
 /* Basic */
 
 	@-ms-viewport {
@@ -2105,7 +2168,7 @@ input, select, textarea {
 		}
 
 /* Image */
-
+/* 
 	.image {
 		border-radius: 3px;
 		border: 0;
@@ -2116,6 +2179,7 @@ input, select, textarea {
 		.image img {
 			border-radius: 3px;
 			display: block;
+
 		}
 
 		.image.left {
@@ -2132,21 +2196,25 @@ input, select, textarea {
 
 		.image.left, .image.right {
 			max-width: 40%;
+			max-height: 20%;
 		}
 
 			.image.left img, .image.right img {
-				width: 100%;
+				width: 50%;
+				height: 25%;
 			}
 
 		.image.fit {
 			display: block;
 			margin: 0 0 2em 0;
-			width: 100%;
+			width: 50%;
+			height: 25%;
 		}
 
 			.image.fit img {
-				width: 100%;
-			}
+				width: 50%;
+				height: 25%;
+			} */
 
 /* List */
 
