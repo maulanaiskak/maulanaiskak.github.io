@@ -52,20 +52,48 @@
 
 								<h3>Overview</h3>
 								<div class="image-p"><a href = "images/boiler.jpg" target = "_blank"><img src="images/boiler.jpg" alt="" /></a></div>
-								<p align="justify">The benzene production or hydrodealkylation process begins with combining the toluene feed with a stream of mixed hydrogen and fresh hydrogen gas. 
-									Then, the mixture of hydrogen and toluene is preheated using a heater or furnace. In the furnace, the stream is 
-									heated to 600 C then introduced into the reactor.  The reactor is where the main reaction happens:<br/></p>
-
-								<p align="center">C<sub>7</sub>H<sub>8</sub> + H<sub>2</sub> &rarr; C<sub>6</sub>H<sub>6</sub> + CH<sub>4</sub><br/></p>
-									
-								<p align="justify">This reaction is irreversible, and it needs a catalyst. The catalyst consists of chromium or molybdenum oxides,
-									platinum or platinum oxides, on silica or alumina. Another minor reversible side reaction2 is often observed:<br/></p>
-
-								<p align="center">2 Benzene = Diphenyl + H<sub>2</sub></p>
+								<p align="justify">A boiler is an operating unit to produce steam with high pressure with water as raw material that has been 
+									pre-treated to meet the permitted specifications. The water treatment carried out aims to remove mineral content and impurities 
+									in the water. This is because the content of other substances in the water will increase the boiling point of the water itself, 
+									which causes the consumption of gas as fuel to be excessive and thus inefficient.
+								</p>
+								<p align="justify">
+									In 2015, an internal energy audit was conducted by Badak LNG. The results of the audit stated that the boiler efficiency 
+									at Badak LNG was below the expected efficiency value of 84%. Therefore it is necessary to make improvements in the boiler 
+									system. The efficiency of a boiler is influenced by several parameters, such as excess oxygen in flue gas, BFW preheater 
+									outlet temperature, and fuel quality.
+								</p>
+								<p align="justify">
+									Based on the previous research conducted by Badak LNG, “Studies for Increasing Boiler Energy Efficiency”, one way that can 
+									be done to increase boiler efficiency at Badak LNG is to control excess oxygen in the exhaust gas. The actual excess oxygen 
+									value in most boilers often deviates from the design value. Ideally, maximum boiler efficiency will be achieved when the supply 
+									of combustion air to the boiler is equal to its stoichiometric requirements for complete combustion to occur where oxygen will 
+									completely oxidize the carbon content in the fuel gas. However, an excessive amount of air is required to ensure complete combustion 
+									of the boiler.By design, the excess oxygen parameter in the boiler is corrected by a simple bias adjustment by AIC-06. AIC-06 is a 
+									control system, which works by reducing excess oxygen so that it is not too much so that boiler performance can be increased. 
+									However, the use of AIC-06 still has a weakness, namely, when the bias value is reduced, the desired excess oxygen value is not 
+									achieved. This is due to an error in the logic of the combustion control system. Therefore, the author makes a design modification 
+									of the logic of the control system and simulates it with Matlab-Simulink software to see if the excess oxygen value in the exhaust 
+									gas is as expected.
+								</p>
 								<hr />
 
-								<h3>Instrumentation System Design</h3>
+								<h3>Existing Control System</h3>
+								<div class="image-pid"><a href="images/Boiler Existing P&ID.jpg" target="_blank"><img src="images/Boiler Existing P&ID.jpg" alt="" / style="overflow-x:auto;"></a></div>
+								<p>
+									The desired design demand is when the excess oxygen set value is reduced to less than the initial excess oxygen value, the air flow 
+									rate will decrease but the fuel rate remains constant. With the current logic of the control system, this cannot be fulfilled because 
+									when the air flow rate decreases the fuel flow rate will also decrease.
+								</p>
+								<h3>Designed Control System</h3>
 								<div class="image-pid"><a href="images/Boiler P&ID.jpg" target="_blank"><img src="images/Boiler P&ID.jpg" alt="" / style="overflow-x:auto;"></a></div>
+								<p>
+									Modification of the control system logic aims to create a boiler combustion system that is able to keep the value of the rate of fuel 
+									entering the boiler constant when the value of the air flow rate is reduced.
+									The modification made is to move the output of the AIC-06 which was initially fed to the FIC-45 set value to be fed to the output of 
+									the FT-45 reading. With the transfer of the output from the AIC-06, the Process Value (PV) read is not the actual value of the air 
+									flow rate. The PV value received by FIC-45 has been added or subtracted from the value of the output of AIC-06.
+								</p>
 								<h4>Control Loop :</h4>
 								<table>
 									<thead>
@@ -80,114 +108,34 @@
 									<tbody>
 									<tr>
 										<td>1.</td>
-										<td>FIC-001</td>
-										<td>Toluene Feed Flow</td>
+										<td>FIC-03</td>
+										<td>Fuel Gas Flow</td>
 										<td>Orifice Plate</td>
 										<td>Globe Valve (Fail Close)</td>
 									</tr>
 									<tr>
 										<td>2.</td>
-										<td>PI-002</td>
-										<td>Furnace Inlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
+										<td>FIC-45</td>
+										<td>Air Supply Flow</td>
+										<td>Air Damper</td>
 										<td>-</td>
 									</tr>
 									<tr>
 										<td>3.</td>
-										<td>TI-002</td>
-										<td>Furnace Inlet Temperature</td>
-										<td>RTD</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>4.</td>
-										<td>TI-003</td>
-										<td>Furnace Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>5.</td>
-										<td>PI-003</td>
-										<td>Furnace Pressure</td>
-										<td>Differential Pressure</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>6.</td>
-										<td>AT-003</td>
-										<td>Excess Oxygen Concentration</td>
+										<td>AIC-06</td>
+										<td>Oxygen Concentration</td>
 										<td>Zirconia</td>
 										<td>-</td>
 									</tr>
-									<tr>
-										<td>7.</td>
-										<td>TI-004</td>
-										<td>Reactor Inlet Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>8.</td>
-										<td>PI-004</td>
-										<td>Reactor Inlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>9.</td>
-										<td>TIC-005</td>
-										<td>Reactor Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>10.</td>
-										<td>FIC-005</td>
-										<td>Recycled Hydrogen Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Open)</td>
-									</tr>
-									<tr>
-										<td>11.</td>
-										<td>FIC-006</td>
-										<td>Furnace Air Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Open)</td>
-									</tr>
-									<tr>
-										<td>12.</td>
-										<td>FIC-007</td>
-										<td>Furnace Fuel Gas Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Close)</td>
-									</tr>
-									<tr>
-										<td>13.</td>
-										<td>TI-009</td>
-										<td>Reactor Outlet Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>14.</td>
-										<td>PI-009</td>
-										<td>Reactor Outlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
-										<td>-</td>
-									</tr>
-								</tbody>
-								</table>
-
-								<h4>HMI Design :</h4>
-								<h5>Download Instrumentation System File</h5>
+									</tbody>
+									</table>
 
 								<!-- Add icon library -->
 								<a href="/report/benzene.pdf" download>
 									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 									<!-- Auto width -->
-									<button class="btn"><i class="fa fa-download"></i> Download</button>
+									<button class="btn"><i class="fa fa-download"></i> Download Full Report</button>
 								</a>
 							</div>
 						</section>

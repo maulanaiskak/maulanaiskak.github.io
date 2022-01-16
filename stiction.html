@@ -52,137 +52,33 @@
 
 								<h3>Overview</h3>
 								<div class="image-p"><a href = "images/stiction.jpg" target = "_blank"><img src="images/stiction.jpg" alt="" /></a></div>
-								<p align="justify">The benzene production or hydrodealkylation process begins with combining the toluene feed with a stream of mixed hydrogen and fresh hydrogen gas. 
-									Then, the mixture of hydrogen and toluene is preheated using a heater or furnace. In the furnace, the stream is 
-									heated to 600 C then introduced into the reactor.  The reactor is where the main reaction happens:<br/></p>
-
-								<p align="center">C<sub>7</sub>H<sub>8</sub> + H<sub>2</sub> &rarr; C<sub>6</sub>H<sub>6</sub> + CH<sub>4</sub><br/></p>
-									
-								<p align="justify">This reaction is irreversible, and it needs a catalyst. The catalyst consists of chromium or molybdenum oxides,
-									platinum or platinum oxides, on silica or alumina. Another minor reversible side reaction2 is often observed:<br/></p>
-
-								<p align="center">2 Benzene = Diphenyl + H<sub>2</sub></p>
+								<p align="justify">Control Valve is the final control element of a control loop. Control Valve will then implement the strategy chosen 
+									by the controller. The control valve manipulates the fluid flowing in the pipe, such as gas, steam, water, or chemical compounds to 
+									keep the process variable at its setpoint value.</p>
+								<p align="justify">
+									Stiction comes from the words static and friction which means static friction. Stiction is a problem with the control valve 
+									that occurs due to the increase in the value of static friction on the control valve stem so that a stronger force is needed so 
+									that the valve can move. The value of static friction on the control valve stem can increase due to seal degradation, lubricant 
+									depletion, foreign matter ingress, activation of the metal sliding surface causing high temperatures, and too tight packing around 
+									the stem. Resistance caused by packing on the stem is often considered to be the main cause of stiction. Another very common cause 
+									of stiction is due to regulations regarding the emission of volatile organic compounds (VOC). When a VOC leak occurs, the packing 
+									will be tightened considerably more than necessary, causing valve jams and making the process less efficient due to increased energy 
+									consumption. When stiction occurs, the control valve stem does not respond to the output signal from the controller so that the movement 
+									of the control valve is disturbed and causes the relationship between the controller output and valve position to be non-linear. 
+									Stiction can cause plant-wide oscillations and increase process variability.
+								</p>
 								<hr />
 
-								<h3>Online Control Valve Stiction Detection</h3>
-								<!-- <div class="image-pid"><a href="images/P&ID.jpg" target="_blank"><img src="images/P&ID Benzene.jpg" alt="" / style="overflow-x:auto;"></a></div> -->
-								<h4>Control Loop :</h4>
-								<table>
-									<thead>
-										<tr>
-											<th>No.</th>
-											<th>Control/Indicator</th>
-											<th>Process Variable</th>
-											<th>Transmitter Type</th>
-											<th>Control Valve Type</th>
-										</tr>
-									</thead>
-									<tbody>
-									<tr>
-										<td>1.</td>
-										<td>FIC-001</td>
-										<td>Toluene Feed Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Close)</td>
-									</tr>
-									<tr>
-										<td>2.</td>
-										<td>PI-002</td>
-										<td>Furnace Inlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>3.</td>
-										<td>TI-002</td>
-										<td>Furnace Inlet Temperature</td>
-										<td>RTD</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>4.</td>
-										<td>TI-003</td>
-										<td>Furnace Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>5.</td>
-										<td>PI-003</td>
-										<td>Furnace Pressure</td>
-										<td>Differential Pressure</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>6.</td>
-										<td>AT-003</td>
-										<td>Excess Oxygen Concentration</td>
-										<td>Zirconia</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>7.</td>
-										<td>TI-004</td>
-										<td>Reactor Inlet Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>8.</td>
-										<td>PI-004</td>
-										<td>Reactor Inlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>9.</td>
-										<td>TIC-005</td>
-										<td>Reactor Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>10.</td>
-										<td>FIC-005</td>
-										<td>Recycled Hydrogen Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Open)</td>
-									</tr>
-									<tr>
-										<td>11.</td>
-										<td>FIC-006</td>
-										<td>Furnace Air Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Open)</td>
-									</tr>
-									<tr>
-										<td>12.</td>
-										<td>FIC-007</td>
-										<td>Furnace Fuel Gas Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Close)</td>
-									</tr>
-									<tr>
-										<td>13.</td>
-										<td>TI-009</td>
-										<td>Reactor Outlet Temperature</td>
-										<td>Thermocouple</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>14.</td>
-										<td>PI-009</td>
-										<td>Reactor Outlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
-										<td>-</td>
-									</tr>
-								</tbody>
-								</table>
-
-								<h4>HMI Design :</h4>
-								<h5>Download Instrumentation System File</h5>
-
-								<!-- Add icon library -->
+								<h3>Valve Stiction Limit Cycle</h3>
+								<div class="image-stiction"><a href="images/stiction cycle.png" target="_blank"><img src="images/stiction cycle.png" alt="" / style="overflow-x:auto;"></a></div>
+								<h3>Online Detection</h3>
+								<div id="player-overlay">
+									<video class = "vid" controls>
+									  <source src="video/stiction.mp4" />
+									</video>    
+								</div>								
+								<h3>Detection Result</h3>
+								<div class="image-stiction"><a href="images/stiction result.png" target="_blank"><img src="images/stiction result.png" alt="" / style="overflow-x:auto;"></a></div>
 								<a href="/report/benzene.pdf" download>
 									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
