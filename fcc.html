@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Spectral by HTML5 UP</title>
+		<title>Fluid Catalytic Cracking - Maulana Iskak</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Spectral</a></h1>
+						<h1><a href="index.html">maulana iskak</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -44,24 +44,368 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Generic Page</h2>
-							<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+							<h2>Fluid Catalytic Cracking</h2>
+							<p>instrumentation and control system</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>Lorem ipsum dolor</h3>
-								<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+								<h3>Overview</h3>
+								<div class="image-p"><a href = "media/fcc.jpg" target = "_blank"><img src="media/fcc.jpg" alt="" /></a></div>
+								<p align="justify">Fluid Catalytic Cracking (FCC) is one of the processing units in oil refineries. The 
+									main input for the FCC is gas oil, which is a heavy, long-chain, high-boiling hydrocarbon molecule. 
+									FCC breaks the carbon chain in the molecule so that it becomes shorter and has lighter carbon bonds. 
+									FCC consists of a feed system, preheating system, reactor, regenerator, compressor, air blower, catalyst 
+									circulation, and fractionation tower. Preheated feed is mixed with hot slurry recycled from the bottom of the main fractionator 
+									and injected at the bottom of the riser along with the hot catalyst from the regenerator. This totally vaporizes the feed. The hot 
+									catalyst provides the sensible heat, the heat of vaporization, and the heat of reaction necessary for the endothermic 
+									cracking reaction. In the riser, coke is deposited on the catalyst and hence the catalyst has to be regenerated in the 
+									regenerator by burning off the coke in the presence of air. The air is provided to the regenerator by two centrifugal air 
+									blowers: the combustion air blower (which provides the bulk air) and the lift air blower (which also assists in altering the 
+									density of the catalyst for circulation). The reactor product gas is passed to the main fractionator for heat recovery and 
+									separation into various products. 
+								</p>
+								<p align="justify">
+									The spent catalyst is transported back to the regenerator through a U-bend tube. Air is injected at the bottom of the regenerator 
+									lift pipe to assist in the circulation of the catalyst. Catalyst in the regenerator is fluidized using the air from the lift and 
+									combustion air blowers. Carbon and hydrogen on the catalyst react with the air to form carbon monoxide, carbon dioxide, and water. 
+									The flue gas travels up the regenerator through the cyclones, where the entrained catalyst is removed. Regenerated catalyst flows 
+									over a weir into the regenerator standpipe. The level of the catalyst in the stand-pipe provides the driving force for the catalyst 
+									flow back to the reactor.
+								</p>
 
-								<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+								<h3>Instrumentation System Design</h3>
+								<div class="image-pid"><a href="media/FCC P&ID.jpg" target="_blank"><img src="media/FCC P&ID.jpg" alt="" / style="overflow-x:auto;"></a></div>
+								<h4>Control Loop :</h4>
+								<table>
+									<thead>
+										<tr>
+											<th>No.</th>
+											<th>Control/Indicator</th>
+											<th>Process Variable</th>
+											<th>Transmitter Type</th>
+											<th>Control Valve Type</th>
+										</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1.</td>
+										<td>FIC-001</td>
+										<td>Wash Oil Flow</td>
+										<td>Orifice Plate</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>FIC-002</td>
+										<td>Diesel Oil Flow</td>
+										<td>Orifice Plate</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>FIC-003</td>
+										<td>Total Feed Flow</td>
+										<td>Orifice Plate</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>FIC-004</td>
+										<td>Slurry Oil Flow</td>
+										<td>Orifice Plate</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>TI-001</td>
+										<td>Feed Temperature</td>
+										<td>RTD</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>6.</td>
+										<td>TT-002</td>
+										<td>Preheated Temperature</td>
+										<td>RTD</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>7.</td>
+										<td>FIC-005</td>
+										<td>Fuel Gas Flow</td>
+										<td>Orifice Plate</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>8.</td>
+										<td>TI-003</td>
+										<td>Furnace Temperature</td>
+										<td>Thermocouple</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>9.</td>
+										<td>TI-004</td>
+										<td>Reactor Temperature</td>
+										<td>RTD</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>10.</td>
+										<td>PIC-004</td>
+										<td>Reactor Pressure</td>
+										<td>Diaphragm (Gause)</td>
+										<td>Globe Valve (Fail Open)</td>
+									</tr>
+									<tr>
+										<td>11.</td>
+										<td>PI-005</td>
+										<td>Fractionator Pressure</td>
+										<td>Diaphragm (Gauge)</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>12.</td>
+										<td>PDIC-006</td>
+										<td>Reactor-Regenerator PD</td>
+										<td>Diaphragm (Gauge)</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>13.</td>
+										<td>LI-006</td>
+										<td>Stand Pipe Level</td>
+										<td>Differential Pressure</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>14.</td>
+										<td>TI-006</td>
+										<td>Regenerator Temperature</td>
+										<td>Thermocouple</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>15.</td>
+										<td>FI-007</td>
+										<td>Wet Gas Flow</td>
+										<td>Orifice Plate</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>16.</td>
+										<td>FIC-009</td>
+										<td>Lift Air Flow</td>
+										<td>Orifice Plate</td>
+										<td>Butterfly Valve (Fail Close)</td>
+									</tr>
+									<tr>
+										<td>17.</td>
+										<td>AIC-014</td>
+										<td>Flue Gas Temperature</td>
+										<td>Thermocouple</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>18.</td>
+										<td>FI-011</td>
+										<td>Wet Gas Flow</td>
+										<td>Orifice Plate</td>
+										<td>Globe Valve (Fail Close)</td>
+									</tr>
+								</tbody>
+								</table>
 
-								<hr />
+								<h4>Control Architecture :</h4>
+								<table>
+									<thead>
+										<tr>
+											<th>No.</th>
+											<th>Control Loop</th>
+											<th>K<sub>P</sub></th>
+											<th>K<sub>I</sub></th>
+											<th>K<sub>D</sub></th>
+										</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1.</td>
+										<td>FIC-001</td>
+										<td>2.944</td>
+										<td>2.944</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>FIC-002</td>
+										<td>3.08</td>
+										<td>3.08</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>FIC-003</td>
+										<td>3.337</td>
+										<td>3.337</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>FIC-004</td>
+										<td>3.015</td>
+										<td>3.015</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>TIC-002</td>
+										<td>1.01</td>
+										<td>-</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>6.</td>
+										<td>FIC-005</td>
+										<td>24.934</td>
+										<td>0.34</td>
+										<td>271.256</td>
+									</tr>
+									<tr>
+										<td>7.</td>
+										<td>PIC-004</td>
+										<td>125</td>
+										<td>-</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>8.</td>
+										<td>PDIC-006</td>
+										<td>-100.1</td>
+										<td>-100.1</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>9.</td>
+										<td>FIC-009</td>
+										<td>1.002</td>
+										<td>-</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>10.</td>
+										<td>AIC-014</td>
+										<td>0.281</td>
+										<td>0.094</td>
+										<td>-</td>
+									</tr>
+									</tbody>
+									</table>
 
-								<h4>Feugiat aliquam</h4>
-								<p>Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat.</p>
+									<h4>Control Performance :</h4>
+								<table>
+									<thead>
+										<tr>
+											<th>No.</th>
+											<th>Control Loop</th>
+											<th>T<sub>r</sub>(s)</th>
+											<th>T<sub>s</sub>(s)</th>
+											<th>%OS</th>
+											<th>e<sub>ss</sub></th>
+											<th>G<sub>M</sub>(dB)</th>
+											<th>P<sub>M</sub>(<sup>o</sup>)</th>
+										</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1.</td>
+										<td>FIC-001</td>
+										<td>0.591</td>
+										<td>1.05</td>
+										<td>0</td>
+										<td>0</td>
+										<td>&#8734;</td>
+										<td>80.7</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>FIC-002</td>
+										<td>0.592</td>
+										<td>1.05</td>
+										<td>0</td>
+										<td>0</td>
+										<td>&#8734;</td>
+										<td>80.7</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>FIC-003</td>
+										<td>0.592</td>
+										<td>1.05</td>
+										<td>0</td>
+										<td>0</td>
+										<td>&#8734;</td>
+										<td>80.7</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>FIC-004</td>
+										<td>0.591</td>
+										<td>1.05</td>
+										<td>0</td>
+										<td>0</td>
+										<td>&#8734;</td>
+										<td>80.7</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>TIC-002</td>
+										<td>8.9</td>
+										<td>17.8</td>
+										<td>0</td>
+										<td>0</td>
+										<td>35.6</td>
+										<td>80.6</td>
+									</tr>
+									<tr>
+										<td>6.</td>
+										<td>PIC-004</td>
+										<td>1.63</td>
+										<td>8.51</td>
+										<td>18.8</td>
+										<td>0</td>
+										<td>22.5</td>
+										<td>49.2</td>
+									</tr>
+									<tr>
+										<td>7.</td>
+										<td>PDIC-006</td>
+										<td>0.587</td>
+										<td>1.04</td>
+										<td>0</td>
+										<td>0</td>
+										<td>&#8734;</td>
+										<td>80.7</td>
+									</tr>
+									<tr>
+										<td>8.</td>
+										<td>AIC-014</td>
+										<td>0.871</td>
+										<td>6.12</td>
+										<td>6.25</td>
+										<td>0</td>
+										<td>&#8734;</td>
+										<td>96.6</td>
+									</tr>
+									</tbody>
+									</table>
+								<!-- Add icon library -->
+								<a href="/report/benzene.pdf" download>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
-
+									<!-- Auto width -->
+									<button class="btn"><i class="fa fa-download"></i> Download Full Report</button>
+								</a>
 							</div>
 						</section>
 					</article>
