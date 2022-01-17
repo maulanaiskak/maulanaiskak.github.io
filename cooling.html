@@ -75,36 +75,93 @@
 											<th>Control/Indicator</th>
 											<th>Process Variable</th>
 											<th>Transmitter Type</th>
-											<th>Control Valve Type</th>
+											<th>Final Element Type</th>
+										</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1.</td>
+										<td>TIC-005</td>
+										<td>Condensate Temperature</td>
+										<td>RTD</td>
+										<td>Fan</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>LIC-005</td>
+										<td>Water Level</td>
+										<td>Differential Pressure</td>
+										<td>Globe Valve (Fail Open)</td>
+									</tr>
+								</tbody>
+								</table>
+
+								<h4>Control Architecture :</h4>
+								<table>
+									<thead>
+										<tr>
+											<th>No.</th>
+											<th>Control Loop</th>
+											<th>K<sub>P</sub></th>
+											<th>K<sub>I</sub></th>
+											<th>K<sub>D</sub></th>
+										</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1.</td>
+										<td>TIC-005</td>
+										<td>-25.500</td>
+										<td>-53.652</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>FIC-005</td>
+										<td>10.900</td>
+										<td>-</td>
+										<td>-</td>
+									</tr>
+									</tbody>
+								</table>
+
+								
+
+								<h4>Control Performance :</h4>
+								<table>
+									<thead>
+										<tr>
+											<th>No.</th>
+											<th>Control Loop</th>
+											<th>T<sub>s</sub>(s)</th>
+											<th>%OS</th>
+											<th>e<sub>ss</sub></th>
 										</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td>1.</td>
 										<td>FIC-001</td>
-										<td>Toluene Feed Flow</td>
-										<td>Orifice Plate</td>
-										<td>Globe Valve (Fail Close)</td>
+										<td>54.6</td>
+										<td>18.9</td>
+										<td>0.072</td>
 									</tr>
 									<tr>
 										<td>2.</td>
-										<td>PI-002</td>
-										<td>Furnace Inlet Pressure</td>
-										<td>Diaphragm (Gauge)</td>
-										<td>-</td>
+										<td>FIC-002</td>
+										<td>14.6</td>
+										<td>24.9</td>
+										<td>0</td>
 									</tr>
-								</tbody>
+									</tbody>
 								</table>
 
-								<h4>HMI Design :</h4>
-								<h5>Download Instrumentation System File</h5>
-
 								<!-- Add icon library -->
-								<a href="/report/benzene.pdf" download>
+								<a href="/report/Cooling Tower-Maulana Iskak.pdf" download>
 									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 									<!-- Auto width -->
-									<button class="btn"><i class="fa fa-download"></i> Download</button>
+									<button class="btn"><i class="fa fa-download"></i> Download Full Report</button>
 								</a>
 							</div>
 						</section>
