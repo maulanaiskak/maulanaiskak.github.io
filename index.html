@@ -1,213 +1,196 @@
-<!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Maulana Iskak Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="landing is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maulana Iskak | Backend Developer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">MI.</div>
+    <button id="mobile-menu-btn">☰</button>
+    <nav id="nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="assets/Maulana_Iskak_Resume.pdf" target="_blank" class="btn">Resume</a></li>
+        </ul>
+    </nav>
+</header>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<main>
+    <section class="hero">
+        <p class="small-heading fade-in">Hi, my name is</p>
+        <h1 class="fade-in">Maulana Iskak.</h1>
+        <h2 class="fade-in">I build robust backend systems.</h2>
+        <p class="fade-in">
+            I'm a backend developer specializing in building high-performance, scalable services and APIs using Java and Spring Boot.
+            Currently, I'm focused on delivering reliable financial services at Nanovest.
+        </p>
+        <a href="#contact" class="btn fade-in">Get In Touch</a>
+    </section>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Maulana iskak</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="fcc.html">Fluid Catalytic Cracking</a></li>
-											<li><a href="benzene.html">Benzene Production</a></li>
-											<li><a href="stiction.html">Stiction Detection</a></li>
-											<li><a href="boiler.html">Boiler Combustion</a></li>
-											<li><a href="cooling.html">Wet Cooling Tower</a></li>
-											<li><a href="tank.html">Tank Level</a></li>
-											<li><a href="he.html">Heat Exchanger</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+    <section id="about" class="fade-in">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    Hello! I'm Maulana, but you can call me Maul. My journey in software development began in early 2023 when I joined Nanovest
+                    as a Backend Engineer.
+                </p>
+                <p>
+                    I'm passionate about building resilient and efficient backend systems. My focus is on creating well-architected services
+                    that can handle high-load and mission-critical operations, particularly in the fintech domain.
+                </p>
+                <p>
+                    My day-to-day work involves designing APIs, implementing business logic, optimizing database queries, and ensuring high
+                    availability and performance of our services. I enjoy solving complex problems and continuously learning new technologies.
+                </p>
+                <p>Here are a few technologies I've been working with recently:</p>
+                <ul class="skills-list">
+                    <li>Java 17</li>
+                    <li>Spring Boot</li>
+                    <li>PostgreSQL</li>
+                    <li>Google Cloud Platform</li>
+                    <li>Microservices</li>
+                    <li>RESTful APIs</li>
+                    <li>Git</li>
+                    <li>Docker</li>
+                </ul>
+            </div>
+            <div class="pic-wrapper">
+                <img src="assets/images/profile.jpg" alt="Maulana Iskak" class="profile-pic">
+            </div>
+        </div>
+    </section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<img class = "inner-photo" src="images/photo.jpg">
-							<br></br>
-							<h2>Maulana Iskak</h2>
-							<p>Instrumentation | Automation | Machine Learning<br />
-							<ul class="icons">
-								<li><a href="https://www.linkedin.com/in/maulanaiskak" class="icon brands fa-linkedin-in" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.instagram.com/maulanaiskak7/" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
-								<li><a href="mailto:maulanaiskak79@gmail.com" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
-							</ul>
-						</div>
-						<a href="#one" class="more scrolly">More</a>
-					</section>
+    <section id="experience" class="fade-in">
+        <h2 class="section-title">Where I've Worked</h2>
+        <div class="experience-container">
+            <div class="tab-list">
+                <button class="tab-button active" data-tab="nanovest">Nanovest</button>
+                <button class="tab-button" data-tab="previous">Previous</button>
+            </div>
+            <div class="tab-content">
+                <div id="nanovest-content" class="tab-panel active">
+                    <h3 class="job-title">Backend Engineer <span>@ Nanovest</span></h3>
+                    <p class="job-period">Early 2023 - Present</p>
+                    <ul class="job-description">
+                        <li>Develop and maintain account service, management, and risk systems using Java 17 and Spring Boot</li>
+                        <li>Implement RESTful APIs for client applications with focus on security and performance</li>
+                        <li>Optimize PostgreSQL database queries and design efficient data models</li>
+                        <li>Deploy and monitor applications in Google Cloud Platform</li>
+                        <li>Collaborate with cross-functional teams to build resilient financial services</li>
+                        <li>Participate in code reviews and implement best practices in backend development</li>
+                        <li>Troubleshoot and resolve production issues in a timely manner</li>
+                    </ul>
+                </div>
+                <div id="previous-content" class="tab-panel">
+                    <h3 class="job-title">Education & Prior Experience</h3>
+                    <p class="job-period">Before 2023</p>
+                    <ul class="job-description">
+                        <li>Completed computer science education with focus on software development</li>
+                        <li>Built several personal projects to enhance backend development skills</li>
+                        <li>Participated in coding challenges and hackathons to improve problem-solving skills</li>
+                        <li>Self-studied various programming languages and frameworks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>about me<br /></h2>
-								<p align="justify">Engineering Physics graduate who is very passionate about identifying, analyzing, 
-									and designing instrumentation and control systems. Using Matlab-Simulink and TIA Portal 
-									to simulate the control system. Build machine learning models in python for fault detection. 
-									Disciplined, fast learner, and like to learn new things. Work optimally and carefully with clear 
-									goals and high standards. A good team player who has experience in leading a team and completing 
-									the project on time.<br /></p>
-							</header>
-						</div>
-					</section>
+    <section id="projects" class="fade-in">
+        <h2 class="section-title">Some Things I've Built</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="folder-icon">📁</div>
+                    <div class="external-links">
+                        <a href="#" target="_blank">🔗</a>
+                        <a href="#" target="_blank">↗️</a>
+                    </div>
+                </div>
+                <h3 class="project-title">Account Management Service</h3>
+                <p class="project-description">
+                    A core service for managing user accounts, authentication, and authorization. Features secure credential management,
+                    user profile handling, and integration with other services.
+                </p>
+                <ul class="project-tech">
+                    <li>Java</li>
+                    <li>Spring Boot</li>
+                    <li>PostgreSQL</li>
+                    <li>JWT</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="folder-icon">📁</div>
+                    <div class="external-links">
+                        <a href="#" target="_blank">🔗</a>
+                        <a href="#" target="_blank">↗️</a>
+                    </div>
+                </div>
+                <h3 class="project-title">Risk Assessment Engine</h3>
+                <p class="project-description">
+                    A system for evaluating financial transaction risks in real-time. Implements various risk models and provides APIs
+                    for risk scoring and fraud detection.
+                </p>
+                <ul class="project-tech">
+                    <li>Java</li>
+                    <li>Spring Boot</li>
+                    <li>GCP</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="folder-icon">📁</div>
+                    <div class="external-links">
+                        <a href="#" target="_blank">🔗</a>
+                        <a href="#" target="_blank">↗️</a>
+                    </div>
+                </div>
+                <h3 class="project-title">API Gateway</h3>
+                <p class="project-description">
+                    A centralized gateway service that handles routing, load balancing, and rate limiting for microservices. Improves
+                    system security and performance.
+                </p>
+                <ul class="project-tech">
+                    <li>Spring Cloud Gateway</li>
+                    <li>Java</li>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/fcc.jpg" alt="" /></div><div class="content">
-								<h2><a href="fcc.html">Fluid Catalytic Cracking Instrumentation and Control System </a></h2>
-								<ul align="justify">
-									<li>Analyzed the characteristics of the FCC plant to determine the control loops and the appropriate type of sensors and control valves.</li>
-									<li>Created the instrumentation datasheets, piping and instrumentation diagrams, and instrument loop diagrams.</li>
-									<li>Determined the appropriate control architecture for each control loop using.</li>
-									<li>Performed a time and frequency domain analysis on each control loop using Matlab to ensure design requirements are met.</li>
-								</ul>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/benzene.jpg" alt="" /></div><div class="content">
-								<h2><a href="benzene.html">Benzene Production Instrumentation System</a></h2>
-								<ul align="justify">
-									<li>Analyzed the characteristics of the benzene production plant to determine the control loops and the appropriate type of sensors and control valves.</li>
-									<li>Created the instrumentation datasheets, piping and instrumentation diagrams, instrument loop diagrams, network architecture diagrams, and HMI design.</li>
-								</ul>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/stiction.jpg" alt="" /></div><div class="content">
-								<h2><a href="stiction.html">Control Valve Stiction Detection</a></h2>
-								<ul align="justify">
-									<li>Analyzed the control loops data to find the characteristics of the stiction on the valves.</li>
-									<li>Built a random model to detect stiction in online mode using Python.</li>
-									<li>Implemented random forest model for online stiction detection using MQTT protocol</li>
-								</ul>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/boiler.jpg" alt="" /></div><div class="content">
-								<h2><a href = "boiler.html">Boiler 31F-28 PT. Badak NGL Combustion Control System</a></h2>
-								<ul align="justify">
-									<li>Analyzed the fault of the ratio control of the combustion control system on the 31-F-28 boiler.</li>
-									<li>Designed a modification of the combustion system logic successfully by changing the location of the oxygen trim.</li>
-									<li>Simulated the modified combustion control structure using Matlab-Simulink to validate the design results.</li>
-								</ul>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/cooling.jpg" alt="" /></div><div class="content">
-								<h2><a href="cooling.html">Wet Cooling Tower Temperature and Level Control System</a></h2>
-								<ul align="justify">
-									<li>Analyzed the plant characteristics to determine the appropriate level and temperature control architecture.</li>
-									<li>Simulated the level and temperature control structures using Matlab-Simulink to ensure design requirements are met.</li>
-								</ul>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/he.jpg" alt="" /></div><div class="content">
-								<h2><a href="he.html">Heat Exchanger Control System using DCS Yokogawa Centum VP VigilantPlant</a></h2>
-								<p align="justify">Designed and simulated a heat exchanger control system and its HMI with DCS Yokogawa Centum VP VigilantPlant.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/tank.jpg" alt="" /></div><div class="content">
-								<h2><a href="tank.html">Tank Level Control System using Siemens PLCSIM</a></h2>
-								<p align="justify">Designed and simulated a simple tank level control system using Siemens TIA Portal, PLCSIM, and Factory IO.</p>
-							</div>
-						</section>
-					</section>
+    <section id="contact" class="fade-in">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact">
+            <p>
+                I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, I'll do my best to get back to you!
+            </p>
+            <a href="mailto:your-email@example.com" class="btn">Say Hello</a>
+        </div>
+    </section>
+</main>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>organization and activities</h2>
-							</header>
-							<ul class="features">
-								<li>
-									<h3>keluarga mahasiswa teknik nuklir dan teknik fisika UGM</h3>
-									<p>Coordinated the honesty canteen team member and communicated with the sellers in the honesty canteen.<br /></p> 
-									<p>Handled the administrative tasks of the KMTNTF jacket orders.</p>
-								</li>
-								<li>
-									<h3>acoustic research center ugm</h3>
-									<p>Researched about acoustic parameters of the building by direct measurement or by simulation.</p>
-								</li>
-								<li>
-									<h3>kkn-ppm ugm</h3>
-									<p>Led subunit members to create a work program that suits the condition of the village.<br/></p>
-									<p>Communicated with the village officer, unit coordinator, and supervisor.<br/></p>
-									<p>Created and presented booklets on ways of processing waste to villagers.</p>
-								</li>
-								<li>
-									<h3>entrepeneurship days kmtntf ugm</h3>
-									<p>Discussed with other divisions regarding the funds needed for the success of the event.</p>
-									<p>Distributed job desk to division members and discussed how to raise money.</p>
-								</li>
-							</ul>
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank">GH</a>
+        <a href="https://www.linkedin.com/in/maulanaiskak" target="_blank">LI</a>
+        <a href="https://twitter.com/yourusername" target="_blank">TW</a>
+    </div>
+    <p>Built by Maulana Iskak &copy; 2025</p>
+</footer>
 
-							<header class="major">
-								<h2><br/><br/>training and courses</h2>
-							</header>
-							<ul class="features">
-								<li>
-									<h3>genuino 101</h3>
-									<p>Workshop about wearable devices, IoT, Arduino, Intel Curie, Genuino 101, I/O devices on Geniono hands-on practice.</p>
-								</li>
-								<li>
-									<h3>ibm machine learning</h3>
-									<p>Online courses about the basics of machine learning consist of supervised learning, unsupervised learning, deep learning, reinforcement learning, 
-										time series analysis, and survival analysis.</p>
-								</li>
-								<li>
-									<h3>fundamental go lang</h3>
-									<p>Online course about fundamental of Go programming language.</p>
-								</li>
-								<li>
-									<h3>fundamental sql</h3>
-									<p>Online course about fundamental of SQL to manipulate and analyze the relational database.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
+<button class="theme-toggle" id="theme-toggle">🌙</button>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy;Maulana Iskak</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<script src="assets/js/main.js"></script>
+</body>
 </html>
