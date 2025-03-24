@@ -1,83 +1,85 @@
-/*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-(function($) {
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const nav = document.getElementById('nav');
 
-	var	$window = $(window),
-		$body = $('body'),
-		$wrapper = $('#page-wrapper'),
-		$banner = $('#banner'),
-		$header = $('#header');
+mobileMenuBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+// Tab functionality
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabPanels = document.querySelectorAll('.tab-panel');
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+// Hide all tab panels initially
+tabPanels.forEach(panel => {
+    panel.classList.remove('active');
+});
 
-	// Mobile?
-		if (browser.mobile)
-			$body.addClass('is-mobile');
-		else {
+// Show the first tab panel
+document.getElementById('nanovest-content').classList.add('active');
 
-			breakpoints.on('>medium', function() {
-				$body.removeClass('is-mobile');
-			});
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
 
-			breakpoints.on('<=medium', function() {
-				$body.addClass('is-mobile');
-			});
+        // Add active class to clicked button
+        button.classList.add('active');
 
-		}
+        // Hide all tab panels
+        tabPanels.forEach(panel => {
+            panel.classList.remove('active');
+        });
 
-	// Scrolly.
-		$('.scrolly')
-			.scrolly({
-				speed: 1500,
-				offset: $header.outerHeight()
-			});
+        // Show the corresponding tab panel
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(`${tabId}-content`).classList.add('active');
+    });
+});
 
-	// Menu.
-		$('#menu')
-			.append('<a href="#menu" class="close"></a>')
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
+// Intersection Observer for fade-in effect
+const fadeElems = document.querySelectorAll('.fade-in');
 
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
 
-			$window.on('resize', function() { $window.trigger('scroll'); });
+fadeElems.forEach(elem => {
+    observer.observe(elem);
+});
 
-			$banner.scrollex({
-				bottom:		$header.outerHeight() + 1,
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
-			});
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-		}
+// Check for saved theme preference
+if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
+}
 
-})(jQuery);
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+
+    if (body.classList.contains('light-mode')) {
+        themeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+    } else {
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+    }
+});
