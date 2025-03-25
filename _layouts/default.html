@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+<!-- Main container to isolate content -->
+<div class="main-wrapper" id="site-wrapper">
+  <!-- Header section with navigation -->
+  {% include header.html %}
+
+  <!-- Main content area -->
+  <main class="page-content" aria-label="Content">
+    <div class="content-container">
+      {{ content }}
+    </div>
+  </main>
+
+  <!-- Footer section -->
+  {% include footer.html %}
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+    
+    // Diagnostic script
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Running diagnostic for duplicate navigation...');
+        
+        // Add visible borders to all ULs for debugging
+        var allUls = document.querySelectorAll('ul');
+        console.log('Total ULs on page:', allUls.length);
+        
+        for (var i = 0; i < allUls.length; i++) {
+            var ul = allUls[i];
+            // Skip ULs in footer to avoid confusion
+            if (!ul.closest('.site-footer')) {
+                console.log('UL #' + i + ' Parent:', ul.parentNode.tagName, 'Path:', getNodePath(ul));
+                
+                // Are there nav links inside?
+                var navLinks = ul.querySelectorAll('a[href^="#"]');
+                if (navLinks.length > 0) {
+                    console.log('  Contains nav links:', navLinks.length);
+                    
+                    // Remove unwanted navigation lists
+                    if (!ul.closest('nav') && !ul.closest('.project-card') && 
+                        !ul.closest('.skills-grid') && !ul.closest('.responsibilities')) {
+                        ul.style.display = 'none';
+                        console.log('  REMOVED SUSPICIOUS NAVIGATION UL:', getNodePath(ul));
+                    }
+                }
+            }
+        }
+        
+        function getNodePath(el) {
+            var path = '';
+            while (el && el.nodeType === Node.ELEMENT_NODE) {
+                var selector = el.nodeName.toLowerCase();
+                if (el.id) {
+                    selector += '#' + el.id;
+                } else {
+                    var sib = el, nth = 1;
+                    while (sib.nodeType === Node.ELEMENT_NODE && (sib = sib.previousSibling) != null) nth++;
+                    selector += ":nth-child(" + nth + ")";
+                }
+                path = selector + (path ? ' > ' + path : '');
+                el = el.parentNode;
+            }
+            return path;
+        }
+    });
+</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

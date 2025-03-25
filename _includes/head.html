@@ -1,0 +1,57 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+        body > ul:first-of-type,
+        body > ul:first-of-type + ul,
+        body > header + ul,
+        .page-content + ul,
+        .site-header + ul,
+        body > ul {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+        
+        body > header ~ ul:not(.project-list):not(.tech-list):not(.skills-list):not(.responsibilities) {
+            display: none !important;
+        }
+    </style>
+    <script>
+        // Immediately execute this script to remove duplicated menu
+        (function() {
+            function removeDuplicateNav() {
+                // Target any standalone ul on the page that is not inside a proper container
+                var uls = document.querySelectorAll('body > ul, header + ul, .main-wrapper > ul, .site-header + ul');
+                for (var i = 0; i < uls.length; i++) {
+                    var ul = uls[i];
+                    // Check if this is likely a navigation menu
+                    var hasNavLinks = ul.querySelectorAll('a[href^="#"]').length > 0;
+                    if (hasNavLinks) {
+                        ul.style.display = 'none';
+                        ul.style.visibility = 'hidden';
+                        ul.style.opacity = '0';
+                        ul.style.position = 'absolute';
+                        ul.style.left = '-9999px';
+                    }
+                }
+            }
+            
+            // Try to run as early as possible
+            removeDuplicateNav();
+            
+            // Also run when DOM is loaded
+            document.addEventListener('DOMContentLoaded', removeDuplicateNav);
+            
+            // And after a short delay to catch any late renders
+            setTimeout(removeDuplicateNav, 100);
+            setTimeout(removeDuplicateNav, 500);
+        })();
+    </script>
+</head>

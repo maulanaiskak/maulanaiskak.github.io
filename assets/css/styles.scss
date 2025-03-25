@@ -1,0 +1,30 @@
+---
+---
+
+@import "main";
+
+/* Custom fixes */
+body > div.main-wrapper + ul,
+body > .main-wrapper + ul,
+body > .main-wrapper ~ ul,
+body > div.main-wrapper ~ ul,
+body > ul,
+.main-wrapper + ul,
+body > div + ul,
+div.main-wrapper ~ ul {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+  left: -9999px !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Hide duplicate navigation in the top-right */
+body > ul {
+  display: none !important;
+}

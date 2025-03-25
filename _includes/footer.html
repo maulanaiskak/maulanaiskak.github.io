@@ -1,0 +1,55 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Maulana Iskak</h3>
+                <p>A passionate Backend Developer building robust, scalable, and secure systems with Java Spring Boot and Golang.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/maulanaiskak" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/maulanaiskak" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:maulanaiskak9@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:maulanaiskak9@gmail.com"><i class="fas fa-envelope"></i> maulanaiskak9@gmail.com</a></li>
+                    <li><a href="https://linkedin.com/in/maulanaiskak" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://github.com/maulanaiskak" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} Maulana Iskak. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Script to remove duplicate navigation menu
+    document.addEventListener('DOMContentLoaded', function() {
+        // Remove any top-level ul elements that are direct children of body
+        const bodyChildren = document.body.children;
+        for (let i = 0; i < bodyChildren.length; i++) {
+            if (bodyChildren[i].tagName === 'UL') {
+                bodyChildren[i].style.display = 'none';
+            }
+        }
+        
+        // Check if there's a duplicate menu after the header
+        const header = document.querySelector('.site-header');
+        if (header && header.nextElementSibling && header.nextElementSibling.tagName === 'UL') {
+            header.nextElementSibling.style.display = 'none';
+        }
+    });
+</script>

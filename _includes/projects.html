@@ -1,0 +1,36 @@
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        
+        {% assign project_count = site.data.projects | size %}
+        {% if project_count > 0 %}
+        <div class="projects-grid {% if project_count == 1 %}grid-1-item{% elsif project_count == 2 %}grid-2-items{% elsif project_count == 3 %}grid-3-items{% else %}grid-multi-items{% endif %}">
+            {% for project in site.data.projects %}
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header">
+                    <h3>{{ project.title }}</h3>
+                </div>
+                <div class="project-body">
+                    <p>{{ project.description }}</p>
+                    {% if project.highlights %}
+                    <h4>Key Features:</h4>
+                    <ul>
+                        {% for highlight in project.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <div class="tech-stack">
+                        {% for tech in project.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No projects to display.</p>
+        {% endif %}
+    </div>
+</section>
