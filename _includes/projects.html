@@ -1,0 +1,30 @@
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            {% for project in site.data.projects %}
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header">
+                    <h3>{{ project.title }}</h3>
+                </div>
+                <div class="project-body">
+                    <p>{{ project.description }}</p>
+                    {% if project.highlights %}
+                    <h4>Key Features:</h4>
+                    <ul>
+                        {% for highlight in project.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <div class="tech-stack">
+                        {% for tech in project.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

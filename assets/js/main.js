@@ -1,85 +1,106 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-});
 
-// Mobile menu toggle
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const nav = document.getElementById('nav');
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-mobileMenuBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
 
-// Tab functionality
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabPanels = document.querySelectorAll('.tab-panel');
+    // Typing effect for hero section
+    const typedElement = document.getElementById('typed-text');
+    if (typedElement) {
+        const strings = JSON.parse(typedElement.getAttribute('data-strings'));
+        let currentStringIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
 
-// Hide all tab panels initially
-tabPanels.forEach(panel => {
-    panel.classList.remove('active');
-});
+        function type() {
+            const currentString = strings[currentStringIndex];
 
-// Show the first tab panel
-document.getElementById('nanovest-content').classList.add('active');
+            if (isDeleting) {
+                typedElement.textContent = currentString.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                typingSpeed = 50;
+            } else {
+                typedElement.textContent = currentString.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                typingSpeed = 100;
+            }
 
-tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        tabButtons.forEach(btn => btn.classList.remove('active'));
+            if (!isDeleting && currentCharIndex === currentString.length) {
+                isDeleting = true;
+                typingSpeed = 1000; // Pause at the end
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentStringIndex = (currentStringIndex + 1) % strings.length;
+            }
 
-        // Add active class to clicked button
-        button.classList.add('active');
+            setTimeout(type, typingSpeed);
+        }
 
-        // Hide all tab panels
-        tabPanels.forEach(panel => {
-            panel.classList.remove('active');
+        setTimeout(type, 1000);
+    }
+
+    // Project card interactions
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('active');
         });
 
-        // Show the corresponding tab panel
-        const tabId = button.getAttribute('data-tab');
-        document.getElementById(`${tabId}-content`).classList.add('active');
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('active');
+        });
     });
-});
 
-// Intersection Observer for fade-in effect
-const fadeElems = document.querySelectorAll('.fade-in');
+    // Skill bar animation on scroll
+    const skillBars = document.querySelectorAll('.skill-level');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+    function animateSkillBars() {
+        skillBars.forEach(bar => {
+            const rect = bar.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                const level = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = level;
+                }, 100);
+            }
+        });
+    }
+
+    // Run once on page load
+    animateSkillBars();
+
+    // Re-run on scroll (throttled)
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                animateSkillBars();
+                scrollTimeout = null;
+            }, 100);
         }
     });
-}, { threshold: 0.1 });
-
-fadeElems.forEach(elem => {
-    observer.observe(elem);
-});
-
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Check for saved theme preference
-if (localStorage.getItem('theme') === 'light') {
-    body.classList.add('light-mode');
-    themeToggle.textContent = '☀️';
-}
-
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-
-    if (body.classList.contains('light-mode')) {
-        themeToggle.textContent = '☀️';
-        localStorage.setItem('theme', 'light');
-    } else {
-        themeToggle.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-    }
 });

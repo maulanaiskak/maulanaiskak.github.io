@@ -1,0 +1,19 @@
+<section id="education" class="section">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            {% for edu in site.data.education %}
+            <div class="education-card" data-aos="fade-up">
+                <h3>{{ edu.degree }}</h3>
+                <p class="edu-location">{{ edu.institution }}, {{ edu.location }}</p>
+                <span class="edu-period">{{ edu.period }}</span>
+                <p class="gpa">GPA: {{ edu.gpa }}</p>
+                <div class="thesis">
+                    <strong>Final Project:</strong>
+                    {{ edu.thesis }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

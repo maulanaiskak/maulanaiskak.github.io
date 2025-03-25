@@ -1,0 +1,43 @@
+- title: Alerta Incident Management System
+  description: An incident management application for monitoring, alerting, and resolving IT incidents in real-time. Integrated with Slack and Jira for streamlined workflows.
+  technologies:
+    - Golang
+    - Kubernetes
+    - GCP
+    - React.js
+    - Slack API
+    - Jira API
+  image: alerta.png
+  highlights:
+    - Microservices architecture deployment on Kubernetes
+    - Real-time alerting system
+    - On-call scheduling and escalation policies
+    - Integration with monitoring tools
+
+- title: KYC Face Search System
+  description: Developed a sophisticated one-to-many face search functionality for KYC verification, dramatically improving fraud detection capabilities.
+  technologies:
+    - Java
+    - Spring Boot
+    - Computer Vision APIs
+    - PostgreSQL
+  image: kyc.png
+  highlights:
+    - Biometric matching algorithm implementation
+    - High throughput processing system
+    - Security-focused architecture
+    - GDPR-compliant data handling
+
+- title: Data Migration Framework
+  description: Designed and implemented a robust framework for migrating data from GCP Datastore to PostgreSQL while ensuring zero downtime.
+  technologies:
+    - Java
+    - Spring Batch
+    - GCP Datastore
+    - PostgreSQL
+  image: migration.png
+  highlights:
+    - Dual-write mechanism during transition
+    - Data integrity validation
+    - Performance optimization
+    - Automated testing and rollback capability

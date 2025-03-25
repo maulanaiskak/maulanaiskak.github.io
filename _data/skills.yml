@@ -1,0 +1,55 @@
+- category: Programming Languages
+  items:
+    - name: Java
+      level: 90
+    - name: Golang
+      level: 85
+    - name: SQL
+      level: 80
+    - name: JavaScript
+      level: 70
+
+- category: Frameworks & Technologies
+  items:
+    - name: Spring Boot
+      level: 90
+    - name: Docker
+      level: 85
+    - name: Git
+      level: 85
+    - name: React
+      level: 65
+
+- category: Cloud & Infrastructure
+  items:
+    - name: Google Cloud Platform (GCP)
+      level: 85
+    - name: Kubernetes
+      level: 75
+    - name: CI/CD
+      level: 70
+
+- category: Databases
+  items:
+    - name: PostgreSQL
+      level: 85
+    - name: Redis
+      level: 80
+    - name: NoSQL
+      level: 75
+
+- category: Languages
+  items:
+    - name: Bahasa Indonesia
+      level: 100
+      note: Native
+    - name: English
+      level: 85
+      note: Work Proficient
+    - name: Japanese
+      level: 40
+      note: Basic
+
+- category: Certifications
+  items:
+    - Google Cloud Certified Associate Cloud Engineer

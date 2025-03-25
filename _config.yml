@@ -1,0 +1,29 @@
+# Site settings
+title: Maulana Iskak | Backend Developer
+email: maulanaiskak9@gmail.com
+description: >-
+  Backend Developer specializing in Java Spring Boot and Golang with experience in cloud technologies.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: maulanaiskak
+linkedin_username: maulanaiskak
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Other settings
+animate: true
+
+sass:
+  sass_dir: _sass
+  style: compressed
