@@ -41,18 +41,18 @@ layout: default
             I bring a unique analytical perspective to software development challenges.
           </p>
           <p>
-            My experience ranges from developing authentication systems and KYC verification to
-            building transaction processing platforms and data migration frameworks.
+            My experience ranges from developing authentication systems and KYC verification to involvement in stock 
+            and crypto transaction-related systems.
           </p>
         </div>
         <div class="about-stats">
           <div class="stat-item">
-            <span class="stat-count">3+</span>
+            <span class="stat-count">2+</span>
             <span class="stat-label">Years Experience</span>
           </div>
           <div class="stat-item">
             <span class="stat-count">5+</span>
-            <span class="stat-label">Major Projects</span>
+            <span class="stat-label">Projects</span>
           </div>
           <div class="stat-item">
             <span class="stat-count">10+</span>
