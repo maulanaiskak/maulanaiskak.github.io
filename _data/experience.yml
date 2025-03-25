@@ -16,7 +16,10 @@
     - Java
     - Spring Boot
     - PostgreSQL
+    - Redis
+    - Datastore
     - GCP
+    - Terraform
 
 - company: Sinarmas Mining
   location: Jakarta, Indonesia
@@ -25,6 +28,8 @@
   responsibilities:
     - Carried forward the Alerta project from the IT Development program, migrating it from a GCP Compute Engine to a Kubernetes Engine
     - Enhanced with features such as alert notifications, on-call scheduling, escalation policies, and integrations with Slack and Jira
+  projects:
+    - Alerta - Incident Management System
   tech:
     - Golang
     - Kubernetes
@@ -39,8 +44,24 @@
   responsibilities:
     - Completed a comprehensive bootcamp covering IT fundamentals, networking, and programming languages including Golang, JavaScript, and React
     - Successfully developed 'Alerta', an incident management application as the final project in collaboration with my team
+  projects:
+    - Alerta - Incident Management System
   tech:
     - Golang
     - React.js
     - React Native
     - JavaScript
+
+- company: Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka
+  location: Remote
+  position: Cloud Computing Learning Path
+  period: Feb 2021 - Jul 2021
+  responsibilities:
+    - Learned the basics of cloud computing to deploy applications, monitor operations, and manage enterprise solutions with python-based automation and Google Cloud Platform
+    - Collaborated with my team on the development of "Angkat Tani," an application designed to predict crop prices and detect crop diseases from leaf photos
+  projects:
+    - Angkat Tani - Agricultural Support System
+  tech:
+    - Python
+    - Google Cloud Platform
+    - Machine Learning

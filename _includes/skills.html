@@ -22,7 +22,13 @@
             {% else %}
             <ul class="cert-list">
                 {% for item in category.items %}
-                <li>{{ item }}</li>
+                <li>
+                    {% if item.link %}
+                    <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
+                    {% else %}
+                    {{ item }}
+                    {% endif %}
+                </li>
                 {% endfor %}
             </ul>
             {% endif %}

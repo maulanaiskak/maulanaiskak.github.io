@@ -14,6 +14,12 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  
+  /* Adjust multi-item grids on tablets */
+  .projects-grid.grid-3-items, 
+  .education-grid.grid-3-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -35,7 +41,7 @@
     padding: 4rem 0;
   }
 
-  .nav-menu {
+  .site-header nav > ul {
     display: none;
   }
 
@@ -43,45 +49,8 @@
     display: block;
   }
 
-  .mobile-menu {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 999;
-
-    &.active {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        margin: 0;
-
-        a {
-          display: block;
-          padding: 0.75rem 1rem;
-          font-weight: 500;
-          border-bottom: 1px solid #f1f5f9;
-
-          &:hover {
-            background-color: #f8fafc;
-          }
-        }
-      }
-    }
-  }
+  /* Mobile menu is already defined in _layout.scss */
+  /* The mobile-menu class will only display when the .active class is added via JavaScript */
 
   .timeline {
     &:before {
@@ -100,11 +69,31 @@
   .skills-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* Force smaller grid layouts to single column on mobile */
+  .projects-grid.grid-2-items,
+  .projects-grid.grid-3-items,
+  .education-grid.grid-2-items,
+  .education-grid.grid-3-items {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 576px) {
   .container {
     padding: 0 1rem;
+  }
+
+  .header-container {
+    padding: 0.5rem 1rem;
+  }
+  
+  .site-header {
+    position: sticky;
+  }
+  
+  .mobile-menu {
+    top: 60px;
   }
 
   .hero-content {
@@ -134,7 +123,9 @@
     grid-template-columns: 1fr;
   }
 
-  .projects-grid {
+  /* All grids are single column on small mobile */
+  .projects-grid,
+  .education-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -1,43 +1,87 @@
-- title: Alerta Incident Management System
-  description: An incident management application for monitoring, alerting, and resolving IT incidents in real-time. Integrated with Slack and Jira for streamlined workflows.
+- title: KYC One-to-Many Face Search System  
+  description: Developed a one-to-many face search functionality for KYC verification, integrating with third-party services to reduce false negatives from Dukcapil data, preventing unnecessary KYC failures, improving approval rates, and enhancing fraud detection.  
+  technologies:  
+    - Java  
+    - Spring Boot  
+    - PostgreSQL  
+  image: kyc.png  
+  highlights:  
+    - Integrated with third-party face recognition services  
+    - Reduced KYC failures caused by false negatives from Dukcapil  
+    - Biometric matching algorithm implementation  
+
+- title: User Self-Service Authentication
+  description: Implemented secure methods for users to reset 2FA and change phone numbers without requiring login, enhancing security while improving user experience.
+  technologies:
+    - Java
+    - Spring Boot
+    - JWT
+    - Email/SMS Services
+  image: auth.png
+  highlights:
+    - Secure identity verification flow
+    - Time-limited secure tokens
+    - Multi-channel verification
+    - Audit logging for security tracking
+
+- title: Customer PII Data Encryption
+  description: Designed and implemented an encryption system for customer personally identifiable information (PII), ensuring compliance with data protection regulations.
+  technologies:
+    - Java
+    - Spring Boot
+    - AES-256 Encryption
+    - PostgreSQL
+  image: encryption.png
+  highlights:
+    - Field-level encryption implementation
+    - Minimal performance impact
+    - Transparent to application layer
+
+- title: GCP Datastore to PostgreSQL Migration
+  description: Successfully migrated data from Google Cloud Datastore to PostgreSQL while maintaining application availability with zero downtime.
+  technologies:
+    - Java
+    - GCP Datastore
+    - PostgreSQL
+    - Docker
+  image: migration.png
+  highlights:
+    - Careful data mapping between NoSQL and SQL
+    - Data quality validation
+    - Performance optimization
+    - Transaction consistency handling
+
+- title: Alerta - Incident Management System
+  description: Developed an incident management application MVP aimed at replacing OpsGenie. Provides real-time monitoring, alerting, and incident resolution with Slack and Jira integrations.
   technologies:
     - Golang
-    - Kubernetes
     - GCP
+    - Kubernetes
+    - Helm
+    - Terraform
     - React.js
+    - React Native
     - Slack API
     - Jira API
   image: alerta.png
   highlights:
-    - Microservices architecture deployment on Kubernetes
+    - Centralized incident monitoring dashboard
     - Real-time alerting system
     - On-call scheduling and escalation policies
-    - Integration with monitoring tools
+    - Integration with Slack and Jira for streamlined workflows
 
-- title: KYC Face Search System
-  description: Developed a sophisticated one-to-many face search functionality for KYC verification, dramatically improving fraud detection capabilities.
+- title: Angkat Tani - Agricultural Support System
+  description: Indonesia is the largest tropical agricultural country in the world after Brazil. However, with such a large agricultural potential, Indonesia is still behind in exporting agricultural products compared to several other countries because it is lagging in terms of supporting technology. Angkat Tani addresses these challenges by providing tools to predict crop prices and detect plant diseases.
   technologies:
-    - Java
-    - Spring Boot
-    - Computer Vision APIs
-    - PostgreSQL
-  image: kyc.png
+    - Python
+    - Google Cloud Platform
+    - Machine Learning
+    - Android Development
+    - Web Development
+  image: angkat-tani.png
   highlights:
-    - Biometric matching algorithm implementation
-    - High throughput processing system
-    - Security-focused architecture
-    - GDPR-compliant data handling
-
-- title: Data Migration Framework
-  description: Designed and implemented a robust framework for migrating data from GCP Datastore to PostgreSQL while ensuring zero downtime.
-  technologies:
-    - Java
-    - Spring Batch
-    - GCP Datastore
-    - PostgreSQL
-  image: migration.png
-  highlights:
-    - Dual-write mechanism during transition
-    - Data integrity validation
-    - Performance optimization
-    - Automated testing and rollback capability
+    - Crop price prediction using historical data analysis
+    - Plant disease detection from leaf photos
+    - Available as both Android and web applications
+    - Helps farmers make informed decisions about what crops to plant
+    - Supports appropriate treatment selection for crop diseases

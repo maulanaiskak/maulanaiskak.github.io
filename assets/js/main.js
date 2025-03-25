@@ -14,15 +14,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mobile menu toggle
+    // Mobile menu toggle - completely rewritten for reliability
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (menuToggle && mobileMenu) {
+        // Force-remove active class on load
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        
+        // Toggle menu visibility
         menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            this.classList.toggle('active');
+            console.log('Mobile menu toggled - active:', mobileMenu.classList.contains('active'));
         });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                console.log('Mobile menu closed via link click');
+            });
+        });
+    } else {
+        console.error('Mobile menu elements not found:', !!menuToggle, !!mobileMenu);
     }
 
     // Typing effect for hero section
@@ -74,33 +92,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Skill bar animation on scroll
+    // Skill bar animation - modified to run only once
     const skillBars = document.querySelectorAll('.skill-level');
+    
+    // Keep track of which skill bars have already been animated
+    const animatedSkills = new Set();
 
-    function animateSkillBars() {
+    function animateSkillBarsOnce() {
         skillBars.forEach(bar => {
+            // Skip bars that have already been animated
+            if (animatedSkills.has(bar)) {
+                return;
+            }
+            
             const rect = bar.getBoundingClientRect();
+            
+            // Check if skill bar is in the viewport
             if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                const level = bar.style.width;
+                const level = bar.getAttribute('data-level') || bar.style.width;
+                
+                // Set initial width to 0
                 bar.style.width = '0%';
+                
+                // Animate to full width
                 setTimeout(() => {
                     bar.style.width = level;
                 }, 100);
+                
+                // Add to set of animated bars so we don't animate again
+                animatedSkills.add(bar);
             }
         });
+        
+        // If all skill bars have been animated, remove the scroll listener
+        if (animatedSkills.size === skillBars.length) {
+            window.removeEventListener('scroll', throttledAnimation);
+        }
     }
-
-    // Run once on page load
-    animateSkillBars();
-
-    // Re-run on scroll (throttled)
+    
+    // Throttle the scroll event
     let scrollTimeout;
-    window.addEventListener('scroll', function() {
+    function throttledAnimation() {
         if (!scrollTimeout) {
             scrollTimeout = setTimeout(function() {
-                animateSkillBars();
+                animateSkillBarsOnce();
                 scrollTimeout = null;
             }, 100);
         }
-    });
+    }
+    
+    // Run once on page load
+    animateSkillBarsOnce();
+    
+    // Run on scroll until all bars have been animated
+    window.addEventListener('scroll', throttledAnimation);
 });

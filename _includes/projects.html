@@ -1,7 +1,10 @@
 <section id="projects" class="section">
     <div class="container">
         <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
+        
+        {% assign project_count = site.data.projects | size %}
+        {% if project_count > 0 %}
+        <div class="projects-grid {% if project_count == 1 %}grid-1-item{% elsif project_count == 2 %}grid-2-items{% elsif project_count == 3 %}grid-3-items{% else %}grid-multi-items{% endif %}">
             {% for project in site.data.projects %}
             <div class="project-card" data-aos="fade-up">
                 <div class="project-header">
@@ -26,5 +29,8 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <p>No projects to display.</p>
+        {% endif %}
     </div>
 </section>

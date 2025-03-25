@@ -29,7 +29,7 @@ a {
   transition: all 0.3s ease;
 
   &:hover {
-    color: darken(var(--primary-color), 10%);
+    color: color-mix(in srgb, var(--primary-color) 90%, black);
   }
 }
 
@@ -131,4 +131,22 @@ code {
   background-color: #f1f5f9;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
+}
+
+/* Fix for unwanted bullets in header */
+body > ul:first-of-type {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+body > ul {
+  margin-top: 0;
+  margin-bottom: 0;
 }

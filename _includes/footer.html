@@ -34,3 +34,22 @@
         </div>
     </div>
 </footer>
+
+<script>
+    // Script to remove duplicate navigation menu
+    document.addEventListener('DOMContentLoaded', function() {
+        // Remove any top-level ul elements that are direct children of body
+        const bodyChildren = document.body.children;
+        for (let i = 0; i < bodyChildren.length; i++) {
+            if (bodyChildren[i].tagName === 'UL') {
+                bodyChildren[i].style.display = 'none';
+            }
+        }
+        
+        // Check if there's a duplicate menu after the header
+        const header = document.querySelector('.site-header');
+        if (header && header.nextElementSibling && header.nextElementSibling.tagName === 'UL') {
+            header.nextElementSibling.style.display = 'none';
+        }
+    });
+</script>
