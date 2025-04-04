@@ -24,11 +24,11 @@
                         </ul>
                         {% endif %}
 
-                        {% if job.projects %}
-                        <h5>Projects:</h5>
+                        {% if job.projectsAndAchievements %}
+                        <h5>Projects and Achievements:</h5>
                         <ul class="projects-list">
-                            {% for project in job.projects %}
-                            <li>{{ project }}</li>
+                            {% for item in job.projectsAndAchievements %}
+                            <li>{{ item }}</li>
                             {% endfor %}
                         </ul>
                         {% endif %}
