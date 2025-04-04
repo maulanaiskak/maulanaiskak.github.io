@@ -8,10 +8,11 @@
     - period: "2025 - Present"
       description: Transitioned to the asset team, managing stock and gold transactions, including trade processing, portfolio management, and transaction security.
   projectsAndAchievements:
-    - KYC one-to-many face search: Developed face search system that solved false negative face match issues from Dukcapil, preventing incorrect rejections of legitimate users
-    - Authentication self-service: Built secure methods for 2FA reset and phone number changes without login, reducing CS ticket volume
-    - PII data protection: Implemented encryption system achieving full compliance with data protection regulations
-    - Database migration: Successfully executed zero-downtime migration from GCP Datastore to PostgreSQL
+    - "KYC one-to-many face search - Developed face search system that solved false negative face match issues from Dukcapil, preventing incorrect rejections of legitimate users"
+    - "Authentication self-service - Built secure methods for 2FA reset and phone number changes without login, reducing CS ticket volume"
+    - "PII data protection - Implemented encryption system achieving full compliance with data protection regulations"
+    - "Database migration - Successfully executed zero-downtime migration from GCP Datastore to PostgreSQL"
+    - "Certification - Achieved Google Cloud Associate Cloud Engineer certification"
   tech:
     - Java
     - Spring Boot
@@ -29,9 +30,9 @@
     - Carried forward the Alerta project from the IT Development program, migrating it from a GCP Compute Engine to a Kubernetes Engine
     - Enhanced with features such as alert notifications, on-call scheduling, escalation policies, and integrations with Slack and Jira
   projectsAndAchievements:
-    - Alerta migration: Successfully migrated incident management system to Kubernetes, improving system scalability and reliability
-    - Feature enhancement: Implemented critical features including alert notifications and on-call scheduling
-    - System integration: Built seamless integrations with Slack and Jira, streamlining incident management workflows
+    - "Alerta migration - Successfully migrated incident management system to Kubernetes, improving system scalability and reliability"
+    - "Feature enhancement - Implemented critical features including alert notifications and on-call scheduling"
+    - "System integration - Built seamless integrations with Slack and Jira, streamlining incident management workflows"
   tech:
     - Golang
     - Kubernetes
@@ -47,9 +48,9 @@
     - Completed a comprehensive bootcamp covering IT fundamentals, networking, and programming languages including Golang, JavaScript, and React
     - Successfully developed 'Alerta', an incident management application as the final project in collaboration with my team
   projectsAndAchievements:
-    - Alerta MVP: Led development of incident management system MVP with team
-    - Technical skills: Mastered multiple programming languages and frameworks
-    - Team collaboration: Successfully delivered final project within deadline
+    - "Alerta MVP - Led development of incident management system MVP with team"
+    - "Technical skills - Mastered multiple programming languages and frameworks"
+    - "Team collaboration - Successfully delivered final project within deadline"
   tech:
     - Golang
     - React.js
@@ -64,9 +65,8 @@
     - Learned the basics of cloud computing to deploy applications, monitor operations, and manage enterprise solutions with python-based automation and Google Cloud Platform
     - Collaborated with my team on the development of "Angkat Tani," an application designed to predict crop prices and detect crop diseases from leaf photos
   projectsAndAchievements:
-    - Angkat Tani: Developed agricultural support system with ML-based crop disease detection
-    - Cloud expertise: Gained hands-on experience with GCP services and cloud architecture
-    - Certification: Achieved Google Cloud Associate Cloud Engineer certification
+    - "Angkat Tani - Developed agricultural support system with ML-based crop disease detection"
+    - "Cloud expertise - Gained hands-on experience with GCP services and cloud architecture"
   tech:
     - Python
     - Google Cloud Platform
