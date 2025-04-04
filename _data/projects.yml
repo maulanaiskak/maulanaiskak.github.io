@@ -1,17 +1,19 @@
 - title: KYC One-to-Many Face Search System  
-  description: Developed a one-to-many face search functionality for KYC verification, integrating with third-party services to reduce false negatives from Dukcapil data, preventing unnecessary KYC failures, improving approval rates, and enhancing fraud detection.  
+  description: Developed a one-to-many face search functionality for KYC verification to address false negative face matches from Dukcapil. By implementing an additional verification layer with third-party face recognition services, we successfully reduced cases where legitimate users were incorrectly rejected during KYC verification.  
   technologies:  
     - Java  
     - Spring Boot  
     - PostgreSQL  
   image: kyc.png  
   highlights:  
-    - Integrated with third-party face recognition services  
-    - Reduced KYC failures caused by false negatives from Dukcapil  
-    - Biometric matching algorithm implementation  
+    - Solved false negative face match issues from Dukcapil verification
+    - Implemented additional verification layer with third-party face recognition
+    - Reduced incorrect KYC rejections for legitimate users
+    - Improved customer onboarding experience
+    - Decreased manual review workload for support team
 
 - title: User Self-Service Authentication
-  description: Implemented secure methods for users to reset 2FA and change phone numbers without requiring login, enhancing security while improving user experience.
+  description: Implemented secure methods for users to reset 2FA and change phone numbers without requiring login. This solution significantly reduced customer support tickets and streamlined the authentication process, improving user satisfaction for account management features.
   technologies:
     - Java
     - Spring Boot
@@ -19,13 +21,14 @@
     - Email/SMS Services
   image: auth.png
   highlights:
-    - Secure identity verification flow
-    - Time-limited secure tokens
-    - Multi-channel verification
-    - Audit logging for security tracking
+    - Significantly reduced customer support workload through automated self-service
+    - Enhanced user experience by eliminating login requirements for account recovery
+    - Improved security with multi-channel verification process
+    - Reduced operational costs by automating support processes
+    - Implemented comprehensive audit logging for security tracking
 
 - title: Customer PII Data Encryption
-  description: Designed and implemented an encryption system for customer personally identifiable information (PII), ensuring compliance with data protection regulations.
+  description: Designed and implemented an encryption system for customer personally identifiable information (PII), ensuring compliance with data protection regulations. The system achieved full compliance with data protection standards while maintaining optimal system performance.
   technologies:
     - Java
     - Spring Boot
@@ -33,12 +36,13 @@
     - PostgreSQL
   image: encryption.png
   highlights:
-    - Field-level encryption implementation
-    - Minimal performance impact
-    - Transparent to application layer
+    - Successfully implemented comprehensive PII protection system
+    - Achieved full compliance with data protection regulations
+    - Enhanced customer trust through improved data security
+    - Implemented field-level encryption without impacting system performance
 
 - title: GCP Datastore to PostgreSQL Migration
-  description: Successfully migrated data from Google Cloud Datastore to PostgreSQL while maintaining application availability with zero downtime.
+  description: Successfully migrated data from Google Cloud Datastore to PostgreSQL while maintaining application availability with zero downtime. The migration improved database performance and reduced operational costs.
   technologies:
     - Java
     - GCP Datastore
@@ -46,10 +50,11 @@
     - Docker
   image: migration.png
   highlights:
-    - Careful data mapping between NoSQL and SQL
-    - Data quality validation
-    - Performance optimization
-    - Transaction consistency handling
+    - Successfully completed zero-downtime migration
+    - Improved system reliability and performance
+    - Reduced operational costs through optimized database structure
+    - Enhanced data consistency and integrity
+    - Implemented robust data validation processes
 
 - title: Alerta - Incident Management System
   description: Developed an incident management application MVP aimed at replacing OpsGenie. Provides real-time monitoring, alerting, and incident resolution with Slack and Jira integrations.
