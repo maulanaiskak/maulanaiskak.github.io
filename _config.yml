@@ -24,6 +24,11 @@ collections:
 # Other settings
 animate: true
 
+exclude:
+  - CLAUDE.md
+  - .claude/
+  - maulanaiskak-nextjs/
+
 sass:
   sass_dir: _sass
   style: compressed
