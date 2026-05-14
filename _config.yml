@@ -1,8 +1,8 @@
 # Site settings
-title: Maulana Iskak | Backend Developer
+title: Maulana Iskak | Senior Backend Engineer
 email: maulanaiskak9@gmail.com
 description: >-
-  Backend Developer specializing in Java Spring Boot and Golang with experience in cloud technologies.
+  Senior Backend Engineer specializing in distributed systems, event-driven architecture, and fintech platforms on GCP.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: maulanaiskak

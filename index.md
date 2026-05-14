@@ -7,8 +7,8 @@ layout: default
   <div class="container">
     <div class="hero-content">
       <h1>Maulana Iskak</h1>
-      <h2 id="typed-text" data-strings='["Backend Developer", "Java Spring Boot Developer", "Golang Developer"]'></h2>
-      <p>Building robust, scalable, and maintainable backend systems</p>
+      <h2 id="typed-text" data-strings='["Senior Backend Engineer", "Distributed Systems Engineer", "Fintech Backend Specialist"]'></h2>
+      <p>Building fault-tolerant, event-driven systems for high-reliability fintech at scale</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn primary">Contact Me</a>
         <a href="#projects" class="btn secondary">View Projects</a>
@@ -32,22 +32,21 @@ layout: default
       <div class="about-info" data-aos="fade-left">
         <div class="about-text">
           <p>
-            I'm a passionate Backend Developer with extensive experience in Java Spring Boot and Golang.
-            Currently working at Nanovest, I specialize in building secure, scalable systems for financial applications
-            with a focus on robust architecture and clean code.
+            Backend engineer with 3+ years in regulated fintech, building distributed systems for transaction processing,
+            identity verification, and digital asset platforms on GCP. Currently a Senior Backend Engineer at Nanovest.
           </p>
           <p>
-            With a background in Engineering Physics from Universitas Gadjah Mada and a Google Cloud certification,
-            I bring a unique analytical perspective to software development challenges.
+            Strong focus on fault-tolerant design, event-driven architecture, and high-reliability system delivery at scale —
+            from multi-chain wallet backends handling ~IDR 1B monthly volume to batch pipelines processing ~5M users daily.
           </p>
           <p>
-            My experience ranges from developing authentication systems and KYC verification to involvement in stock 
-            and crypto transaction-related systems.
+            Engineering Physics graduate from Universitas Gadjah Mada (GPA 3.63) and Google Cloud Certified Professional
+            Cloud Architect.
           </p>
         </div>
         <div class="about-stats">
           <div class="stat-item">
-            <span class="stat-count">2+</span>
+            <span class="stat-count">3+</span>
             <span class="stat-label">Years Experience</span>
           </div>
           <div class="stat-item">

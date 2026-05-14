@@ -1,92 +1,105 @@
-- title: KYC One-to-Many Face Search System  
-  description: Developed a one-to-many face search functionality for KYC verification to address false negative face matches from Dukcapil. By implementing an additional verification layer with third-party face recognition services, we successfully reduced cases where legitimate users were incorrectly rejected during KYC verification.  
-  technologies:  
-    - Java  
-    - Spring Boot  
-    - PostgreSQL  
-  image: kyc.png  
-  highlights:  
-    - Solved false negative face match issues from Dukcapil verification
-    - Implemented additional verification layer with third-party face recognition
-    - Reduced incorrect KYC rejections for legitimate users
-    - Improved customer onboarding experience
-    - Decreased manual review workload for support team
+- title: Multi-Chain Non-Custodial Wallet Backend
+  description: Designed and implemented a non-custodial wallet backend supporting Solana, Base, Ethereum, and BSC chains. Handles ~IDR 1B monthly transaction volume with idempotent operations and compensation-based failure recovery to guarantee zero fund loss under concurrent cross-chain operations.
+  technologies:
+    - Java
+    - Spring Boot
+    - PostgreSQL
+    - GCP
+    - Pub/Sub
+    - Solana
+    - Ethereum
+    - BSC
+  image: wallet.png
+  highlights:
+    - Supports Solana, Base, Ethereum, and BSC chains in a single unified backend
+    - Idempotent operations prevent duplicate transactions under retries
+    - Compensation-based failure recovery ensures zero fund loss on partial failures
+    - ~IDR 1B monthly transaction volume handled in production
 
-- title: User Self-Service Authentication
-  description: Implemented secure methods for users to reset 2FA and change phone numbers without requiring login. This solution significantly reduced customer support tickets and streamlined the authentication process, improving user satisfaction for account management features.
+- title: KYC Async Verification Pipeline
+  description: Redesigned a synchronous, vendor-coupled KYC verification flow into an async, event-driven pipeline using Pub/Sub with multi-stage fallback logic. Eliminated cascading timeout failures caused by upstream vendor latency spikes and cut false KYC rejections by ~40%.
+  technologies:
+    - Java
+    - Spring Boot
+    - GCP Pub/Sub
+    - PostgreSQL
+  image: kyc.png
+  highlights:
+    - Reduced KYC false rejections by ~40%
+    - Decoupled from vendor latency via async Pub/Sub pipeline
+    - Multi-stage fallback logic prevents single point of failure
+    - Improved customer onboarding reliability at scale
+
+- title: User Self-Service Authentication & Recovery
+  description: Built automated account recovery workflows and self-service backend processes for 2FA reset and phone number changes without requiring login. Reduced 2FA-related support tickets by ~78% and significantly cut manual operational load across the platform.
   technologies:
     - Java
     - Spring Boot
     - JWT
     - Email/SMS Services
+    - PostgreSQL
   image: auth.png
   highlights:
-    - Significantly reduced customer support workload through automated self-service
-    - Enhanced user experience by eliminating login requirements for account recovery
-    - Improved security with multi-channel verification process
-    - Reduced operational costs by automating support processes
-    - Implemented comprehensive audit logging for security tracking
+    - Reduced 2FA-related support tickets by ~78%
+    - Eliminated login requirement for account recovery flows
+    - Multi-channel verification for security
+    - Comprehensive audit logging for compliance
 
-- title: Customer PII Data Encryption
-  description: Designed and implemented an encryption system for customer personally identifiable information (PII), ensuring compliance with data protection regulations. The system achieved full compliance with data protection standards while maintaining optimal system performance.
+- title: User Tiering Pipeline (5M Users)
+  description: Designed and implemented a daily batch pipeline that processes ~5M users based on AUM and transaction volume to assign tiering classifications. Resolved critical performance bottlenecks through concurrency tuning and SQL connection pool optimization.
   technologies:
     - Java
     - Spring Boot
-    - AES-256 Encryption
     - PostgreSQL
-  image: encryption.png
+    - Redis
+  image: tiering.png
   highlights:
-    - Successfully implemented comprehensive PII protection system
-    - Achieved full compliance with data protection regulations
-    - Enhanced customer trust through improved data security
-    - Implemented field-level encryption without impacting system performance
+    - Processes ~5M users daily in a scheduled batch
+    - Concurrency tuning resolved critical throughput bottlenecks
+    - SQL connection pool optimization reduced database contention
+    - AUM and transaction volume as tiering classification signals
 
-- title: GCP Datastore to PostgreSQL Migration
-  description: Successfully migrated data from Google Cloud Datastore to PostgreSQL while maintaining application availability with zero downtime. The migration improved database performance and reduced operational costs.
+- title: Zero-Downtime PostgreSQL Migration
+  description: Executed a zero-downtime migration of a 5M-row PostgreSQL table using a dual-write pattern combined with bulk backfill and rigorous data consistency validation, completing the migration with no service interruption.
   technologies:
     - Java
-    - GCP Datastore
     - PostgreSQL
-    - Docker
+    - GCP
   image: migration.png
   highlights:
-    - Successfully completed zero-downtime migration
-    - Improved system reliability and performance
-    - Reduced operational costs through optimized database structure
-    - Enhanced data consistency and integrity
-    - Implemented robust data validation processes
+    - Zero service downtime throughout the migration
+    - Dual-write pattern ensured no data loss during cutover
+    - Bulk backfill with consistency validation for 5M rows
+    - Rollback-safe approach throughout the process
 
 - title: Alerta - Incident Management System
-  description: Developed an incident management application MVP aimed at replacing OpsGenie. Provides real-time monitoring, alerting, and incident resolution with Slack and Jira integrations.
+  description: Built an incident management backend platform in Go for TechConnect (Sinarmas Group), integrating Slack, Jira, and Confluence. Implemented end-to-end alert ingestion pipelines, routing logic, and escalation workflows used by internal operations teams.
   technologies:
     - Golang
-    - GCP
     - Kubernetes
+    - GCP
     - Helm
     - Terraform
-    - React.js
-    - React Native
     - Slack API
     - Jira API
+    - Confluence API
   image: alerta.png
   highlights:
-    - Centralized incident monitoring dashboard
-    - Real-time alerting system
+    - End-to-end alert ingestion and routing pipeline
     - On-call scheduling and escalation policies
-    - Integration with Slack and Jira for streamlined workflows
+    - Integrations with Slack, Jira, and Confluence
+    - Deployed on Kubernetes with Helm and Terraform
 
 - title: Angkat Tani - Agricultural Support System
-  description: Indonesia is the largest tropical agricultural country in the world after Brazil. However, with such a large agricultural potential, Indonesia is still behind in exporting agricultural products compared to several other countries because it is lagging in terms of supporting technology. Angkat Tani addresses these challenges by providing tools to predict crop prices and detect plant diseases.
+  description: Developed "Angkat Tani" as part of Bangkit Academy, an application to help Indonesian farmers by predicting crop prices and detecting plant diseases from leaf photos using machine learning.
   technologies:
     - Python
     - Google Cloud Platform
     - Machine Learning
     - Android Development
-    - Web Development
   image: angkat-tani.png
   highlights:
     - Crop price prediction using historical data analysis
-    - Plant disease detection from leaf photos
-    - Available as both Android and web applications
-    - Helps farmers make informed decisions about what crops to plant
-    - Supports appropriate treatment selection for crop diseases
+    - Plant disease detection from leaf photos via ML
+    - Available as Android and web applications
+    - Supports informed crop planting and treatment decisions
