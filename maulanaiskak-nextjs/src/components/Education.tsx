@@ -3,7 +3,10 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { GraduationCap, MapPin, Calendar, ExternalLink } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { education } from '../data/education';
+
+const MiniScene = dynamic(() => import('./MiniScene'), { ssr: false });
 
 export default function Education() {
   const ref = useRef(null);
@@ -56,17 +59,27 @@ export default function Education() {
               </div>
 
               <div className="bg-white/5 rounded-xl p-5 border border-white/5">
-                <h5 className="text-sm uppercase tracking-wider text-gray-500 mb-2 font-medium">Thesis</h5>
-                <p className="text-gray-300 mb-3 text-sm leading-relaxed">{edu.thesis}</p>
-                <a
-                  href={edu.thesis_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#00d4ff] text-sm hover:underline"
-                >
-                  <ExternalLink size={13} />
-                  View Thesis
-                </a>
+                <h5 className="text-sm uppercase tracking-wider text-gray-500 mb-4 font-medium">Thesis</h5>
+                <div className="flex flex-col md:flex-row gap-6 items-center">
+                  {/* Three.js: signal waveform with stiction detection */}
+                  <div className="w-full md:w-72 h-36 shrink-0 rounded-lg overflow-hidden bg-[#0a0a0a]">
+                    {inView && (
+                      <MiniScene variant="thesisSignal" color="#00d4ff" className="w-full h-full" isHovered={false} />
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-gray-300 mb-3 text-sm leading-relaxed">{edu.thesis}</p>
+                    <a
+                      href={edu.thesis_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#00d4ff] text-sm hover:underline"
+                    >
+                      <ExternalLink size={13} />
+                      View Thesis
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}

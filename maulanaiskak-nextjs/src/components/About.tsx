@@ -1,23 +1,48 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+import GradientOrbs from './GradientOrbs';
 
 const STATS = [
-  { value: '3+', label: 'Years Experience' },
-  { value: '5M+', label: 'Users in Pipeline' },
-  { value: '170K+', label: 'On-chain Tokens Screened' },
-  { value: 'GCP Pro', label: 'Cloud Architect Certified' },
+  { value: 3,      suffix: '+',  label: 'Years Experience',           isNum: true },
+  { value: 5,      suffix: 'M+', label: 'Users in Pipeline',          isNum: true },
+  { value: 170,    suffix: 'K+', label: 'On-chain Tokens Screened',   isNum: true },
+  { value: null,   suffix: '',   label: 'Cloud Architect Certified',  text: 'GCP Pro' },
 ];
+
+function AnimatedCounter({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) {
+  const [count, setCount] = useState(0);
+  const startedRef = useRef(false);
+
+  useEffect(() => {
+    if (!inView || startedRef.current) return;
+    startedRef.current = true;
+    const duration = 1500;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [inView, target]);
+
+  return <>{count}{suffix}</>;
+}
 
 export default function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="about" className="py-24 bg-[#0d0d0d]" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="about" className="relative py-24 bg-[#0d0d0d] overflow-hidden" ref={ref}>
+      <GradientOrbs variant="cyan" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -70,7 +95,13 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                 className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#00d4ff]/40 transition-colors duration-300"
               >
-                <div className="text-3xl font-bold text-[#00d4ff] mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-[#00d4ff] mb-1">
+                  {stat.isNum && stat.value !== null ? (
+                    <AnimatedCounter target={stat.value} suffix={stat.suffix} inView={inView} />
+                  ) : (
+                    stat.text
+                  )}
+                </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
               </motion.div>
             ))}

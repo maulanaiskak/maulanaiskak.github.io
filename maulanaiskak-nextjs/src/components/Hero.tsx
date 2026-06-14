@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import GlitchText from './GlitchText';
 
 const ParticleCanvas = dynamic(() => import('./ParticleCanvas'), { ssr: false });
 
@@ -79,7 +80,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight"
         >
-          Maulana Iskak
+          <GlitchText>Maulana Iskak</GlitchText>
         </motion.h1>
 
         <motion.div
