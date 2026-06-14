@@ -1,8 +1,7 @@
 /.idea/
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
 .DS_Store
-node_modules
+
+# Next.js
+maulanaiskak-nextjs/.next/
+maulanaiskak-nextjs/out/
+maulanaiskak-nextjs/node_modules/
